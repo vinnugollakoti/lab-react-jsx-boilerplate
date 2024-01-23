@@ -3,7 +3,6 @@ import "./App.css"
 import elephant from "./images/elephant.jpeg";
 
 export default class AppClass extends Component{
-  
   imageData = ()=>{
     let data = [
       {
@@ -25,6 +24,19 @@ export default class AppClass extends Component{
     ]
     return data;
   }
-
   // code here
+  render(){
+    let data =this.imageData()
+    return(
+      <>
+    <h1 className="head">Kalvium gallery</h1>
+    <div className="grid">
+    {data.map((data)=>{
+      return <img src={data.img} key={data.id}/>
+    })}
+    </div>
+    </>
+  )}
+
 }
+   
